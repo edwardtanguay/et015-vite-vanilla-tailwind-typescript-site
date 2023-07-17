@@ -1,9 +1,11 @@
 import './style.scss';
 import Separator from './components/Separator';
+import { ItemHeader } from './components/ItemHeader';
 
 // this works
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML =/*html*/ `
+${ItemHeader('Interactive Buttons')}
 <div class="flex gap-6" x-data="{message: ''}">
 	<button class="btn btn-primary" @click="message = 'create the page'">Create Page</button>
 	<button class="btn btn-secondary" @click="message = 'get information'">Get Information</button>
