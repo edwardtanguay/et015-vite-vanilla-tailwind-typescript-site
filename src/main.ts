@@ -1,8 +1,9 @@
 import './style.scss';
 import { ItemHeader } from './components/ItemHeader';
 import { Separator } from './components/Separator';
-
-// this works
+import employees from './data/employees.json';
+import { Employee } from './components/Employee';
+import { IEmployee } from './interfaces';
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML =/*html*/ `
 
@@ -17,7 +18,10 @@ ${ItemHeader('Interactive Buttons')}
 ${Separator()}
 
 ${ItemHeader('Employee Cards')}
-<div class="text-gray-400">(todo)</div>
+
+${employees.map((employee:IEmployee) => {
+	return `${Employee(employee)}`;
+}).join('')}
 ${Separator()}
 
 ${ItemHeader('Feature 3')}
